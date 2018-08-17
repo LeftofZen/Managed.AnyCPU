@@ -67,9 +67,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>xcopy /Y $(SolutionDir)AnyCPU.Interop\bin\$(Configuration)\x86\AnyCPU.Interop.dll $(ProjectDir)Resources\x86
-xcopy /Y $(SolutionDir)AnyCPU.Interop\bin\$(Configuration)\x64\AnyCPU.Interop.dll $(ProjectDir)Resources\x64
-xcopy /Y $(SolutionDir)AnyCPU.Interop\bin\$(Configuration)\x64\AnyCPU.Interop.dll $(ProjectDir)bin\AnyCPU\$(Configuration)</PreBuildEvent>
+    <PreBuildEvent>"xcopy /Y $(SolutionDir)AnyCPU.Interop\bin\$(Configuration)\x86\AnyCPU.Interop.dll" "$(ProjectDir)Resources\x86"
+"xcopy /Y $(SolutionDir)AnyCPU.Interop\bin\$(Configuration)\x64\AnyCPU.Interop.dll" "$(ProjectDir)Resources\x64"
+"xcopy /Y $(SolutionDir)AnyCPU.Interop\bin\$(Configuration)\x64\AnyCPU.Interop.dll" "$(ProjectDir)bin\AnyCPU\$(Configuration)</PreBuildEvent>"
   </PropertyGroup>
   <Target Name="InjectModuleInitializer" AfterTargets="AfterBuild">
     <Exec Command="..\packages\InjectModuleInitializer.1.5\tools\InjectModuleInitializer.exe &quot;$(TargetPath)&quot;" />
